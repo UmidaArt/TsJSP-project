@@ -13,6 +13,7 @@ const Todos = () => {
 
     const [search, setSearch]: [string, (search: string) => void] = React.useState("")
     const [todos, setTodos]: [ITodos[], (users: ITodos[]) => void] = React.useState(defaultUsers)
+    const [sortItem, setSortItem]: [ITodos[], (users: ITodos[]) => void] = React.useState(defaultUsers)
 
     React.useEffect(() => {
         axios.get<ITodos[]>('https://jsonplaceholder.typicode.com/todos')
@@ -23,6 +24,18 @@ const Todos = () => {
 
     const handleChange = (e: {target: {value: string; }}) => {
         setSearch(e.target.value)
+    }
+
+    const ascending = () => {
+        const sort = todos.sort((a, b) => a.title.localeCompare(b.title)).reverse()
+        setSortItem(sort)
+        console.log(sort)
+    }
+
+    const descending = () => {
+        const sort = todos.sort((a, b) => a.title.localeCompare(b.title))
+        setSortItem(sort)
+        console.log(sort)
     }
 
     return (
@@ -46,8 +59,8 @@ const Todos = () => {
                 }
             </ul>
             <div className="btnSortGroup">
-                <button className="btnSort">Descending</button>
-                <button className="btnSort">Ascending</button>
+                <button className="btnSort" onClick={descending}>Descending</button>
+                <button className="btnSort" onClick={ascending}>Ascending</button>
             </div>
         </div>
     );
