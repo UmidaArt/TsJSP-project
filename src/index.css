@@ -11,3 +11,52 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  width: 1170px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+.navigation {
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+.navBtn {
+  padding: 10px 20px;
+  border: 1px solid #585757;
+  text-decoration: none;
+  margin: 0 40px;
+  color: #444242;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.mainBlock {
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-around;
+}
+.input {
+  width: 60%;
+  padding: 10px;
+  margin: 20px 0;
+}
+.userList {
+  width: 80%;
+}
+.user {
+  cursor: pointer;
+  list-style: none;
+  margin-bottom: 10px;
+}
+.btnSortGroup {
+  padding-top: 20px;
+}
+.btnSort {
+  padding: 10px;
+  margin: 0 2px;
+}
